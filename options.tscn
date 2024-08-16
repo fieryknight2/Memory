@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://d7s4n33jmqol"]
+
+[ext_resource type="Script" path="res://option.gd" id="1_djyls"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5yrln"]
+bg_color = Color(0.211765, 0.239216, 0.290196, 1)
+border_color = Color(1.34766e-06, 0.904423, 0.971242, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Option" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_5yrln")
+script = ExtResource("1_djyls")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 0
+
+[node name="Sorting" type="HBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Correct" type="Label" parent="Margin/Sorting"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "X"
+
+[node name="Option" type="Label" parent="Margin/Sorting"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 25
+text = "4"
+horizontal_alignment = 2

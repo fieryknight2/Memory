@@ -1,0 +1,212 @@
+[gd_scene load_steps=10 format=3 uid="uid://ctxkfvmnbd6re"]
+
+[ext_resource type="Texture2D" uid="uid://dfihmbx6cucsv" path="res://radial-progress.png" id="1_bmvhv"]
+[ext_resource type="PackedScene" uid="uid://3wbtmhgdsksx" path="res://question.tscn" id="1_c2r0s"]
+[ext_resource type="Texture2D" uid="uid://bui5eyb2iqrng" path="res://radial-progress-empty.png" id="1_ep18h"]
+[ext_resource type="Script" path="res://eval.gd" id="1_k1suo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ntuxa"]
+bg_color = Color(0.211765, 0.239216, 0.290196, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rbqbm"]
+bg_color = Color(1, 0, 0, 1)
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70kdm"]
+bg_color = Color(0, 1, 0, 1)
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+
+[sub_resource type="Gradient" id="Gradient_2wppw"]
+offsets = PackedFloat32Array(0, 0.0640569, 1)
+colors = PackedColorArray(0.298039, 0.298039, 0.298039, 1, 0.376471, 0.376471, 0.376471, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vb37x"]
+gradient = SubResource("Gradient_2wppw")
+width = 128
+height = 128
+fill_from = Vector2(0.555556, 1)
+fill_to = Vector2(0.564103, 0)
+repeat = 2
+
+[node name="Eval" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k1suo")
+qdisplay = ExtResource("1_c2r0s")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Everything" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Evaluation" type="HBoxContainer" parent="MarginContainer/Everything"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Answers" type="PanelContainer" parent="MarginContainer/Everything/Evaluation"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ntuxa")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Everything/Evaluation/Answers"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Everything/Evaluation/Answers/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Progress" type="TextureProgressBar" parent="MarginContainer/Everything/Evaluation/Answers/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+value = 83.0
+fill_mode = 5
+texture_under = ExtResource("1_ep18h")
+texture_progress = ExtResource("1_bmvhv")
+
+[node name="Grade" type="Label" parent="MarginContainer/Everything/Evaluation/Answers/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 80
+text = "A - 90%"
+horizontal_alignment = 1
+
+[node name="Distribution" type="VBoxContainer" parent="MarginContainer/Everything/Evaluation"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
+alignment = 1
+
+[node name="OptionA" type="HBoxContainer" parent="MarginContainer/Everything/Evaluation/Distribution"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Answers" type="ProgressBar" parent="MarginContainer/Everything/Evaluation/Distribution/OptionA"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_rbqbm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_70kdm")
+value = 50.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="MarginContainer/Everything/Evaluation/Distribution/OptionA"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+text = "A - 0%"
+
+[node name="OptionB" type="HBoxContainer" parent="MarginContainer/Everything/Evaluation/Distribution"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Answers" type="ProgressBar" parent="MarginContainer/Everything/Evaluation/Distribution/OptionB"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_rbqbm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_70kdm")
+value = 50.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="MarginContainer/Everything/Evaluation/Distribution/OptionB"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+text = "B - 0%"
+
+[node name="OptionC" type="HBoxContainer" parent="MarginContainer/Everything/Evaluation/Distribution"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Answers" type="ProgressBar" parent="MarginContainer/Everything/Evaluation/Distribution/OptionC"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_rbqbm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_70kdm")
+value = 50.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="MarginContainer/Everything/Evaluation/Distribution/OptionC"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+text = "C - 0%"
+
+[node name="OptionD" type="HBoxContainer" parent="MarginContainer/Everything/Evaluation/Distribution"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Answers" type="ProgressBar" parent="MarginContainer/Everything/Evaluation/Distribution/OptionD"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/background = SubResource("StyleBoxFlat_rbqbm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_70kdm")
+value = 50.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="MarginContainer/Everything/Evaluation/Distribution/OptionD"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+text = "D - 0%"
+
+[node name="Fade" type="TextureRect" parent="MarginContainer/Everything"]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("GradientTexture2D_vb37x")
+
+[node name="Questions" type="ScrollContainer" parent="MarginContainer/Everything/Fade"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Everything/Fade/Questions"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_right = 5
+
+[node name="Questions" type="VBoxContainer" parent="MarginContainer/Everything/Fade/Questions/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[connection signal="resized" from="MarginContainer/Everything/Evaluation/Distribution" to="." method="_on_distribution_resized"]

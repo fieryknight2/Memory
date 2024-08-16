@@ -1,0 +1,200 @@
+[
+	{
+		"time": 4,
+		"question": "What's the Pythagorean Theorem?",
+		"answer": 3,
+		"0": "A + B = C",
+		"1": "A^2 - B^2 = C^2",
+		"2": "A^2 + B = C^2",
+		"3": "A^2 + B^2 = C^2",
+	},
+	{
+		"time": 6,
+		"question": "What is the Reciprocal Identity for cos?",
+		"answer": 1,
+		"0": "1 / csc x",
+		"1": "1 / sec x",
+		"2": "sec x",
+		"3": "csc x / sec x",
+	},
+	{
+		"time": 3,
+		"question": "What's the relationship between Tangent and Secant?",
+		"answer": 2,
+		"0": "1 + sec^2 x = tan^2 x",
+		"1": "1 - tan^2 x = sec^2 x",
+		"2": "1 + tan^2 x = sec^2 x",
+		"3": "tan^2 x = sec^2 x + 1",
+	},
+	{
+		"time": 5,
+		"question": "Which of the following is true?",
+		"answer": 3,
+		"0": "sin x = -sin x",
+		"1": "sin x = sin -x",
+		"2": "cot -x = cot x",
+		"3": "cos x = cos -x",
+	},
+	{
+		"time": 5,
+		"question": "What is the formula for the double angle of sine?",
+		"answer": 0,
+		"0": "sin(2x) = 2 sin(x) cos(x)",
+		"1": "sin(2x) = sin^2(x) - cos^2(x)",
+		"2": "sin(2x) = 2 sin^2(x)",
+		"3": "sin(2x) = sin(x) + cos(x)"
+	},
+	{
+		"time": 5,
+		"question": "What is the formula for the double angle of cosine?",
+		"answer": 1,
+		"0": "cos(2x) = 2 cos^2(x) - 1",
+		"1": "cos(2x) = cos^2(x) - sin^2(x)",
+		"2": "cos(2x) = 1 - 2 sin^2(x)",
+		"3": "cos(2x) = sin^2(x) - cos^2(x)"
+	},
+	{
+		"time": 4,
+		"question": "What is the Co-Function Identity for sine?",
+		"answer": 0,
+		"0": "sin(π/2 - x) = cos(x)",
+		"1": "sin(x) = cos(π - x)",
+		"2": "sin(x) = cos(x)",
+		"3": "sin(π/2 + x) = -cos(x)"
+	},
+	{
+		"time": 5,
+		"question": "What is the formula for the tangent of a sum of two angles?",
+		"answer": 2,
+		"0": "tan(x + y) = tan(x) + tan(y)",
+		"1": "tan(x + y) = tan(x) - tan(y)",
+		"2": "tan(x + y) = (tan(x) + tan(y)) / (1 - tan(x) tan(y))",
+		"3": "tan(x + y) = (tan(x) - tan(y)) / (1 + tan(x) tan(y))"
+	},
+	{
+		"time": 4,
+		"question": "What is the Reciprocal Identity for sine?",
+		"answer": 1,
+		"0": "1 / sin x",
+		"1": "csc x",
+		"2": "sin x",
+		"3": "cos x / sin x"
+	},
+	{
+		"time": 4,
+		"question": "Which of the following is true about the tangent function?",
+		"answer": 0,
+		"0": "tan(x) = sin(x) / cos(x)",
+		"1": "tan(x) = cos(x) / sin(x)",
+		"2": "tan(x) = 1 / sin(x)",
+		"3": "tan(x) = 1 / cos(x)"
+	},
+	{
+		"time": 5,
+		"question": "What is the formula for the tangent of a difference of two angles?",
+		"answer": 1,
+		"0": "tan(x - y) = (tan(x) - tan(y)) / (1 + tan(x) tan(y))",
+		"1": "tan(x - y) = (tan(x) - tan(y)) / (1 - tan(x) tan(y))",
+		"2": "tan(x - y) = (1 - tan(x) tan(y)) / (tan(x) + tan(y))",
+		"3": "tan(x - y) = (1 + tan(x) tan(y)) / (tan(x) - tan(y))"
+	},
+	{
+		"time": 5,
+		"question": "What is the formula for the cosine of a sum of two angles?",
+		"answer": 2,
+		"0": "cos(x + y) = cos(x) cos(y) - sin(x) sin(y)",
+		"1": "cos(x + y) = cos(x) + cos(y)",
+		"2": "cos(x + y) = cos(x) cos(y) - sin(x) sin(y)",
+		"3": "cos(x + y) = cos(x) - sin(y)"
+	},
+	{
+		"time": 5,
+		"question": "What is the formula for the sine of a difference of two angles?",
+		"answer": 0,
+		"0": "sin(x - y) = sin(x) cos(y) - cos(x) sin(y)",
+		"1": "sin(x - y) = sin(x) + cos(y)",
+		"2": "sin(x - y) = cos(x) - sin(y)",
+		"3": "sin(x - y) = sin(x) sin(y) - cos(x) cos(y)"
+	},
+	{
+		"time": 3,
+		"question": "What is the Period of the sine function?",
+		"answer": 1,
+		"0": "π",
+		"1": "2π",
+		"2": "π/2",
+		"3": "2π/3"
+	},
+	{
+		"time": 3,
+		"question": "What is the Period of the cosine function?",
+		"answer": 1,
+		"0": "π",
+		"1": "2π",
+		"2": "π/2",
+		"3": "2π/3"
+	},
+	{
+		"time": 4,
+		"question": "Which of the following is an even function?",
+		"answer": 3,
+		"0": "sin(x)",
+		"1": "tan(x)",
+		"2": "cot(x)",
+		"3": "cos(x)"
+	},
+	{
+		"time": 4,
+		"question": "Which of the following is an odd function?",
+		"answer": 0,
+		"0": "sin(x)",
+		"1": "cos(x)",
+		"2": "sec(x)",
+		"3": "csc(x)"
+	},
+	{
+		"time": 5,
+		"question": "What is the formula for the secant of a sum of two angles?",
+		"answer": 2,
+		"0": "sec(x + y) = sec(x) sec(y) / (sec(x) + sec(y))",
+		"1": "sec(x + y) = sec(x) - sec(y)",
+		"2": "sec(x + y) = 1 / (cos(x) cos(y) - sin(x) sin(y))",
+		"3": "sec(x + y) = 1 / (cos(x) cos(y) + sin(x) sin(y))"
+	},
+	{
+		"time": 5,
+		"question": "What is the formula for the cosecant of a difference of two angles?",
+		"answer": 0,
+		"0": "csc(x - y) = 1 / (sin(x) cos(y) - cos(x) sin(y))",
+		"1": "csc(x - y) = 1 / (sin(x) - sin(y))",
+		"2": "csc(x - y) = 1 / (cos(x) - cos(y))",
+		"3": "csc(x - y) = 1 / (sin(x) cos(y) + cos(x) sin(y))"
+	},
+	{
+		"time": 5,
+		"question": "What is the formula for the cotangent of a sum of two angles?",
+		"answer": 1,
+		"0": "cot(x + y) = (cot(x) + cot(y)) / (1 - cot(x) cot(y))",
+		"1": "cot(x + y) = (cot(x) cot(y) - 1) / (cot(x) + cot(y))",
+		"2": "cot(x + y) = (1 - cot(x) cot(y)) / (cot(x) + cot(y))",
+		"3": "cot(x + y) = (cot(x) - cot(y)) / (1 + cot(x) cot(y))"
+	},
+	{
+		"time": 5,
+		"question": "What is the formula for the cosecant of a sum of two angles?",
+		"answer": 0,
+		"0": "csc(x + y) = 1 / (sin(x) cos(y) + cos(x) sin(y))",
+		"1": "csc(x + y) = 1 / (sin(x) - sin(y))",
+		"2": "csc(x + y) = 1 / (cos(x) - cos(y))",
+		"3": "csc(x + y) = 1 / (sin(x) cos(y) - cos(x) sin(y))"
+	},
+	{
+		"time": 5,
+		"question": "What is the formula for the cotangent of a difference of two angles?",
+		"answer": 1,
+		"0": "cot(x - y) = (cot(x) + cot(y)) / (1 + cot(x) cot(y))",
+		"1": "cot(x - y) = (cot(x) cot(y) + 1) / (cot(x) - cot(y))",
+		"2": "cot(x - y) = (1 + cot(x) cot(y)) / (cot(x) - cot(y))",
+		"3": "cot(x - y) = (cot(x) - cot(y)) / (1 - cot(x) cot(y))"
+	}
+]

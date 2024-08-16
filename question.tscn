@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://3wbtmhgdsksx"]
+
+[ext_resource type="Script" path="res://question.gd" id="1_db2fh"]
+[ext_resource type="PackedScene" uid="uid://d7s4n33jmqol" path="res://options.tscn" id="2_x6ywv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ap46w"]
+bg_color = Color(0.129412, 0.14902, 0.180392, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="Question" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 40)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ap46w")
+script = ExtResource("1_db2fh")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Selected" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Correct" type="Label" parent="MarginContainer/Selected"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "✓"
+
+[node name="Question" type="Label" parent="MarginContainer/Selected"]
+layout_mode = 2
+text = "The question is why we even exist in the first place"
+
+[node name="Options" type="HFlowContainer" parent="MarginContainer/Selected"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="A" parent="MarginContainer/Selected/Options" instance=ExtResource("2_x6ywv")]
+layout_mode = 2
+
+[node name="B" parent="MarginContainer/Selected/Options" instance=ExtResource("2_x6ywv")]
+layout_mode = 2
+
+[node name="C" parent="MarginContainer/Selected/Options" instance=ExtResource("2_x6ywv")]
+layout_mode = 2
+
+[node name="D" parent="MarginContainer/Selected/Options" instance=ExtResource("2_x6ywv")]
+layout_mode = 2

@@ -1,0 +1,214 @@
+[gd_scene load_steps=12 format=3 uid="uid://d2e4xvxp0syqa"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_e1ip7"]
+[ext_resource type="PackedScene" uid="uid://ctxkfvmnbd6re" path="res://eval.tscn" id="2_luw2h"]
+
+[sub_resource type="SystemFont" id="SystemFont_iv8ma"]
+font_weight = 800
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3lf16"]
+bg_color = Color(0.298039, 0.298039, 0.298039, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d4tdw"]
+bg_color = Color(7.31587e-06, 0.656626, 0.861789, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="SystemFont" id="SystemFont_0wir7"]
+font_weight = 700
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_05kue"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mpcc3"]
+bg_color = Color(0.203606, 0.233077, 0.274338, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vq5pi"]
+bg_color = Color(0.0231475, 0.0302092, 0.0419434, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1uwb"]
+bg_color = Color(0.113725, 0.133333, 0.160784, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7eek3"]
+
+[node name="Everything" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e1ip7")
+eval = ExtResource("2_luw2h")
+
+[node name="Margins" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Layout" type="VBoxContainer" parent="Margins"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="QuestionInfo" type="VBoxContainer" parent="Margins/Layout"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Margins/Layout/QuestionInfo"]
+layout_mode = 2
+text = "Question:"
+horizontal_alignment = 1
+
+[node name="Question" type="Label" parent="Margins/Layout/QuestionInfo"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+theme_override_fonts/font = SubResource("SystemFont_iv8ma")
+theme_override_font_sizes/font_size = 45
+text = "What is the sqrt of π?"
+horizontal_alignment = 1
+
+[node name="Timer" type="ProgressBar" parent="Margins/Layout/QuestionInfo"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_3lf16")
+theme_override_styles/fill = SubResource("StyleBoxFlat_d4tdw")
+max_value = 500.0
+value = 50.0
+show_percentage = false
+
+[node name="Answers" type="GridContainer" parent="Margins/Layout"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+columns = 2
+
+[node name="OptionA" type="Button" parent="Margins/Layout/Answers"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/font_hover_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/font_focus_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/font_color = Color(0.318139, 0.937505, 0, 1)
+theme_override_colors/font_outline_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_normal_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_focus_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_hover_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_0wir7")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_05kue")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mpcc3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vq5pi")
+theme_override_styles/normal = SubResource("StyleBoxFlat_j1uwb")
+text = "2"
+
+[node name="OptionB" type="Button" parent="Margins/Layout/Answers"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/font_hover_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/font_focus_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/font_color = Color(0.318139, 0.937505, 0, 1)
+theme_override_colors/font_outline_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_normal_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_focus_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_hover_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_0wir7")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_7eek3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mpcc3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vq5pi")
+theme_override_styles/normal = SubResource("StyleBoxFlat_j1uwb")
+text = "1"
+
+[node name="OptionC" type="Button" parent="Margins/Layout/Answers"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/font_hover_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/font_focus_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/font_color = Color(0.318139, 0.937505, 0, 1)
+theme_override_colors/font_outline_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_normal_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_focus_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_hover_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_0wir7")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_05kue")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mpcc3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vq5pi")
+theme_override_styles/normal = SubResource("StyleBoxFlat_j1uwb")
+text = "3"
+
+[node name="OptionD" type="Button" parent="Margins/Layout/Answers"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_disabled_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/font_hover_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/font_focus_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/font_color = Color(0.318139, 0.937505, 0, 1)
+theme_override_colors/font_outline_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_normal_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_focus_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_hover_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_0wir7")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_05kue")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mpcc3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vq5pi")
+theme_override_styles/normal = SubResource("StyleBoxFlat_j1uwb")
+text = "4"
+
+[connection signal="pressed" from="Margins/Layout/Answers/OptionA" to="." method="_on_option_a_pressed"]
+[connection signal="pressed" from="Margins/Layout/Answers/OptionB" to="." method="_on_option_b_pressed"]
+[connection signal="pressed" from="Margins/Layout/Answers/OptionC" to="." method="_on_option_c_pressed"]
+[connection signal="pressed" from="Margins/Layout/Answers/OptionD" to="." method="_on_option_d_pressed"]
