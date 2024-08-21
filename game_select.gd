@@ -1,15 +1,34 @@
 extends Control
 
+@export var quiz_button: PackedScene
+
 var trig_questions = {}
 var basic_calculus = {}
 var spanish = {}
 
 func _ready():
-	trig_questions = scramble_data(load_data("res://quizzes/trigonometry.json"))
-	basic_calculus = scramble_data(load_data("res://quizzes/basic_calculus.json"))
-	spanish = scramble_data(load_data("res://quizzes/spanish.json"))
+	get_window().min_size.x = 900
+	get_window().min_size.y = 400
+	var dir = DirAccess.open("res://quizzes")
+	if dir:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		while file_name != "":
+			if file_name.ends_with("json"):
+				print("Found quiz: " + file_name)
+				var button = quiz_button.instantiate()
+				var data = scramble_data(load_data("res://quizzes/" + file_name))
+				button.text = file_name.trim_suffix(".json")
+				button.connect("pressed", func(): button_clicked(data))
+				%Quizzes.add_child(button)
+			file_name = dir.get_next()
+	else:
+		print("An error occurred when trying to access the path.")
 	
 
+func button_clicked(data):
+	Global.questions = data
+	get_tree().change_scene_to_file("res://main.tscn")
 
 func scramble_data(data):
 	var random = RandomNumberGenerator.new()
@@ -30,6 +49,7 @@ func scramble_data(data):
 			data[q]["answer"] = 2
 		elif ans == data[q][3]:
 			data[q]["answer"] = 3
+	data.shuffle()
 	return data
 
 
@@ -41,18 +61,3 @@ func load_data(data):
 		info[i][2] = info[i]["2"]
 		info[i][3] = info[i]["3"]
 	return info
-
-
-func _on_trigonometry_pressed() -> void:
-	Global.questions = trig_questions
-	get_tree().change_scene_to_file("res://main.tscn")
-
-
-func _on_spanish_pressed() -> void:
-	Global.questions = spanish
-	get_tree().change_scene_to_file("res://main.tscn")
-	
-
-func _on_basic_calculus_pressed() -> void:
-	Global.questions = basic_calculus
-	get_tree().change_scene_to_file("res://main.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ctxkfvmnbd6re"]
+[gd_scene load_steps=8 format=3 uid="uid://ctxkfvmnbd6re"]
 
 [ext_resource type="Texture2D" uid="uid://dfihmbx6cucsv" path="res://radial-progress.png" id="1_bmvhv"]
 [ext_resource type="PackedScene" uid="uid://3wbtmhgdsksx" path="res://question.tscn" id="1_c2r0s"]
@@ -21,18 +21,6 @@ corner_radius_bottom_right = 10
 bg_color = Color(0, 1, 0, 1)
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
-
-[sub_resource type="Gradient" id="Gradient_2wppw"]
-offsets = PackedFloat32Array(0, 0.0640569, 1)
-colors = PackedColorArray(0.298039, 0.298039, 0.298039, 1, 0.376471, 0.376471, 0.376471, 0, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_vb37x"]
-gradient = SubResource("Gradient_2wppw")
-width = 128
-height = 128
-fill_from = Vector2(0.555556, 1)
-fill_to = Vector2(0.564103, 0)
-repeat = 2
 
 [node name="Eval" type="Control"]
 layout_mode = 3
@@ -182,28 +170,18 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 1, 1, 1)
 text = "D - 0%"
 
-[node name="Fade" type="TextureRect" parent="MarginContainer/Everything"]
+[node name="Questions" type="ScrollContainer" parent="MarginContainer/Everything"]
+show_behind_parent = true
 layout_mode = 2
 size_flags_vertical = 3
-texture = SubResource("GradientTexture2D_vb37x")
 
-[node name="Questions" type="ScrollContainer" parent="MarginContainer/Everything/Fade"]
-show_behind_parent = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 3
-
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Everything/Fade/Questions"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Everything/Questions"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/margin_right = 5
 
-[node name="Questions" type="VBoxContainer" parent="MarginContainer/Everything/Fade/Questions/MarginContainer"]
+[node name="Questions" type="VBoxContainer" parent="MarginContainer/Everything/Questions/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
