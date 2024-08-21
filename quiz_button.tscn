@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://btcceqdi6prdq"]
+
+[sub_resource type="SystemFont" id="SystemFont_xwulf"]
+font_weight = 700
+subpixel_positioning = 0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0yt5t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d0og1"]
+bg_color = Color(0.203606, 0.233077, 0.274338, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iglqd"]
+bg_color = Color(0.0231475, 0.0302092, 0.0419434, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_noiky"]
+bg_color = Color(0.113725, 0.133333, 0.160784, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="button" type="Button"]
+size_flags_horizontal = 3
+theme_override_colors/font_disabled_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/font_hover_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/font_focus_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/font_color = Color(0.318139, 0.937505, 0, 1)
+theme_override_colors/font_outline_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_normal_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_focus_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_hover_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0.317647, 0.937255, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_xwulf")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0yt5t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d0og1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iglqd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_noiky")
+text = "My Text
+"
