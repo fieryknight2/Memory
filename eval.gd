@@ -61,11 +61,10 @@ func _ready() -> void:
 		
 
 func update_answers_size():
-	var max_size = get_viewport_rect().size.x * 0.7
-	%OptionA.find_child("Answers").custom_minimum_size = Vector2(clamp((%OptionA.find_child("Answers").max_value / Global.questions.size()) * max_size, 0, max_size), 30)
-	%OptionB.find_child("Answers").custom_minimum_size = Vector2(clamp((%OptionB.find_child("Answers").max_value / Global.questions.size()) * max_size, 0, max_size), 30)
-	%OptionC.find_child("Answers").custom_minimum_size = Vector2(clamp((%OptionC.find_child("Answers").max_value / Global.questions.size()) * max_size, 0, max_size), 30)
-	%OptionD.find_child("Answers").custom_minimum_size = Vector2(clamp((%OptionD.find_child("Answers").max_value / Global.questions.size()) * max_size, 0, max_size), 30)
+	%OptionA.find_child("Answers").custom_minimum_size = Vector2(clamp((%OptionA.find_child("Answers").max_value / Global.questions.size()) * 200, 0, 200), 30)
+	%OptionB.find_child("Answers").custom_minimum_size = Vector2(clamp((%OptionB.find_child("Answers").max_value / Global.questions.size()) * 200, 0, 200), 30)
+	%OptionC.find_child("Answers").custom_minimum_size = Vector2(clamp((%OptionC.find_child("Answers").max_value / Global.questions.size()) * 200, 0, 200), 30)
+	%OptionD.find_child("Answers").custom_minimum_size = Vector2(clamp((%OptionD.find_child("Answers").max_value / Global.questions.size()) * 200, 0, 200), 30)
 
 func _on_distribution_resized() -> void:
 	update_answers_size()
