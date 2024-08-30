@@ -1,5 +1,5 @@
 # Memory
-A game for memorization, using ChatGPT genererated questions
+A game for memorization, using ChatGPT generated questions
 This game was made in a morning in preperation for school, hopefully to train
 quick memorization facts. The odds of me adding more features are pretty slim though
 
